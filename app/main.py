@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from app.api.routes import router
+from app.api.v1.api import api_router
 
 app = FastAPI(
     title="GenAI TalentHub API",
@@ -8,4 +8,4 @@ app = FastAPI(
     version="1.0.0",
 )
 
-app.include_router(router)
+app.include_router(api_router)
