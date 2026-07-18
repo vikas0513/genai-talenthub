@@ -1,11 +1,12 @@
 from fastapi import FastAPI
 
 from app.api.v1.api import api_router
+from app.core.config import settings
 
 app = FastAPI(
-    title="GenAI TalentHub API",
-    description="AI-powered Resume Intelligence Platform",
-    version="1.0.0",
+    title=settings.app_name,
+    version=settings.app_version,
+    debug=settings.debug,
 )
 
 app.include_router(api_router)
