@@ -8,11 +8,17 @@ class Settings(BaseSettings):
     app_version: str = "1.0.0"
     debug: bool = True
 
+    # Database
     database_host: str
     database_port: int
     database_name: str
     database_user: str
     database_password: str
+
+    # JWT Authentication
+    secret_key: str
+    algorithm: str = "HS256"
+    access_token_expire_minutes: int = 60
 
     model_config = SettingsConfigDict(
         env_file=".env",
